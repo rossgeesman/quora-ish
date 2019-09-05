@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @question.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @question.body %>
+</p>
+
+<br>
+<%= render 'answers/form', answer: @answer %>
+<h3>
+  Answers:
+</h3>
+<% @question.answers.each do |answer| %>
+  <hr>
+  <p><%= answer.body %></p>
+<% end %>

@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Newest Questions</h1>
+
+<div class='center-section'>
+  <% @questions.each do |question| %>
+    <div>
+      <h2>
+        <%= link_to question.title, question %>
+      </h2>
+      <h3>
+        <%= question.body.truncate(100) %>
+      </h3>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to 'Ask A Question', new_question_path %>
